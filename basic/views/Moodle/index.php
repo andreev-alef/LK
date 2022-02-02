@@ -26,11 +26,10 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/cources-info']) ?>">
-                    <?= Url::to(['moodle/cources-info']) ?>
+                <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/courses-info']) ?>">
+                    <?= Url::to(['moodle/courses-info']) ?>
                     </a></p>
             </div>
-            <!--
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
@@ -51,7 +50,6 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
 
                 <p><a class="btn btn-outline-secondary" href="#">Lorem ipsum dolor</a></p>
             </div>
-            -->
         </div>
 
     </div>
