@@ -20,10 +20,9 @@ and open the template in the editor.
         $functionname = 'core_course_get_courses';
         $domainname = 'https://study.edu.tele-med.ai';
         $course_info = new \stdClass;
-        $course_info->id = 73;
-        //$params = array('courses' => array($course_info));
-        $params = array('ids' => [73]);
-
+        //$course_info->id = 73;
+        $params = array('courses' => array($course_info));
+        $params = ['ids'=>[73, 36]];
 /// REST CALL
 //header('Content-Type: text/plain');
         $serverurl = $domainname . '/webservice/rest/server.php'
