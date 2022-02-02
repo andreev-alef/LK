@@ -9,17 +9,17 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
     <div class="jumbotron text-center bg-transparent">
         <h1 class="display-4">Web-сервисы moodle</h1>
 
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua.</p>
+        <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.</p> -->
 
-        <p><a class="btn btn-lg btn-success" href="#">Lorem ipsum dolor</a></p>
+        <!-- <p><a class="btn btn-lg btn-success" href="#">Lorem ipsum dolor</a></p> -->
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Информация о курсах</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
