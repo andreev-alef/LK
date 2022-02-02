@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use curl;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -62,10 +63,14 @@ class MoodleController extends Controller {
     }
 
     public function actionCoursesInfo() {
+        $token = 'e34754ef2e1ce0df4c8ca95f96f040cf';
+        //$restformat = 'xml';
+        $restformat = 'json';
+        $functionname = 'core_course_get_courses';
         $domainname = 'https://study.edu.tele-med.ai';
-        $course_info = new stdClass();
-        $course_info->ids = null;
-        $params = array('users' => array($course_info));
+        $course_info = new \stdClass;
+        //$course_info->ids = null;
+        $params = array('courses' => array($course_info));
 
 /// REST CALL
 //header('Content-Type: text/plain');
@@ -73,12 +78,12 @@ class MoodleController extends Controller {
                 . '?wstoken=' . $token
                 . '&wsfunction=' . $functionname;
 
-        require_once('./curl.php');
-        $curl = new curl;
+        require_once('../vendor/curl/curl.php');
+        $curl = new \curl();
 //если формат == 'xml', тогда не добавляем параметр для обратной совместимости с Moodle < 2.2
         $restformat = ($restformat == 'json') ? '&moodlewsrestformat=' . $restformat : '';
         $resp = $curl->post($serverurl . $restformat, $params);
-        return $this->render('cources-info');
+        return $this->render('courses-info', ['resp' => $resp]);
     }
 
     /**

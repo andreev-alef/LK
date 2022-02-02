@@ -24,13 +24,11 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                 <h2>Информация о курсах</h2>
 
                 <p>
-                    <?php
-                    
-                    ?>
+                    <?= $resp[1] ?>
                 </p>
 
                 <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/index']) ?>">
-<?= Url::to(['moodle/index']) ?>
+                        <?= Url::to(['moodle/index']) ?>
                     </a></p>
             </div>
             <!--
