@@ -63,6 +63,10 @@ class MoodleController extends Controller
     {
         return $this->render('index');
     }
+    public function actionCourcesInfo()
+    {
+        return $this->render('cources-info');
+    }
 
     /**
      * Login action.

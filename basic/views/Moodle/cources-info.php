@@ -7,7 +7,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Web-сервисы moodle</h1>
+        <h1 class="display-4">Категории и курсы</h1>
 
         <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua.</p> -->
@@ -26,8 +26,8 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/cources-info']) ?>">
-                    <?= Url::to(['moodle/cources-info']) ?>
+                <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/index']) ?>">
+                    <?= Url::to(['moodle/index']) ?>
                     </a></p>
             </div>
             <div class="col-lg-4">
