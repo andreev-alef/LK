@@ -30,6 +30,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     <?= Url::to(['moodle/index']) ?>
                     </a></p>
             </div>
+            <!--
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
@@ -50,6 +51,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
 
                 <p><a class="btn btn-outline-secondary" href="#">Lorem ipsum dolor</a></p>
             </div>
+            -->
         </div>
 
     </div>
