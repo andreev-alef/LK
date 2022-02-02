@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
@@ -26,7 +26,9 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="#">Lorem ipsum dolor</a></p>
+                <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/index']) ?>">
+                    <?= Url::to(['moodle/index']) ?>
+                    </a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Heading</h2>
