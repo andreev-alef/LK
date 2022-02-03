@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        
         <title></title>
     </head>
     <body>
@@ -30,15 +31,13 @@ and open the template in the editor.
                 . '&wsfunction=' . $functionname;
 
         require_once('./curl.php');
-        $curl = new \curl();
+//        $curl = new \curl();
 //если формат == 'xml', тогда не добавляем параметр для обратной совместимости с Moodle < 2.2
         $restformat = ($restformat == 'json') ? '&moodlewsrestformat=' . $restformat : '';
-        $resp = $curl->post($serverurl . $restformat, $params);
+  //      $resp = $curl->post($serverurl . $restformat, $params);
         ?>
-        <?= $restformat ?>
+        <?= $serverurl . $restformat ?>
         <p>
-            <?= strlen($resp) ?>
         <p>
-            <?= var_dump(json_decode($resp)) ?>
     </body>
 </html>
