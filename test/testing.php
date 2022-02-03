@@ -18,7 +18,7 @@ and open the template in the editor.
                     wstoken: token,
                     wsfunction: functionname,
                     moodlewsrestformat: 'json',
-                    courseid: 73 //Retrieve results based on course Id 2            
+                    id: 73 //Retrieve results based on course Id 2
                 }
                 var response = $.ajax(
                         {type: 'GET',
@@ -26,7 +26,12 @@ and open the template in the editor.
                             dataType: "json", // тип загружаемых данных
                             url: serverurl,
                             success: function (data, textStatus) {
-                                $('#data_out').val(data);
+                                var jsn = data;
+                                if (jsn.errorcode == undefined) {
+                                    $('#data_out').html(jsn);
+                                } else
+                                    ($('#data_out').html('<b>' + jsn.errorcode + '</b>'); )
+                                console.log(jsn);
                             }
                         }
                 );
@@ -64,7 +69,7 @@ and open the template in the editor.
         $restformat = ($restformat == 'json') ? '&moodlewsrestformat=' . $restformat : '';
         //      $resp = $curl->post($serverurl . $restformat, $params);
         ?>
-        <?= $serverurl . $restformat ?>
+<?= $serverurl . $restformat ?>
         <p>
         <p>
     </body>
