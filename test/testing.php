@@ -7,7 +7,27 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        
+        <script type="text/javascript" src="./jquery-3.6.0.min.js" ></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var domainname = 'https://study.edu.tele-med.ai';
+                var token = 'e34754ef2e1ce0df4c8ca95f96f040cf';
+                var functionname = 'core_course_get_courses';
+                var serverurl = domainname + '/webservice/rest/server.php';
+                var data = {
+                    wstoken: token,
+                    wsfunction: functionname,
+                    moodlewsrestformat: 'json',
+                    courseid: 73 //Retrieve results based on course Id 2            
+                }
+                var response = $.ajax(
+                        {type: 'GET',
+                            data: data,
+                            url: serverurl
+                        }
+                );
+            });
+        </script>
         <title></title>
     </head>
     <body>
@@ -23,7 +43,7 @@ and open the template in the editor.
         $course_info = new \stdClass;
         //$course_info->id = 73;
         $params = array('courses' => array($course_info));
-        $params = ['ids'=>[73, 36]];
+        $params = ['ids' => [73, 36]];
 /// REST CALL
 //header('Content-Type: text/plain');
         $serverurl = $domainname . '/webservice/rest/server.php'
@@ -34,7 +54,7 @@ and open the template in the editor.
 //        $curl = new \curl();
 //если формат == 'xml', тогда не добавляем параметр для обратной совместимости с Moodle < 2.2
         $restformat = ($restformat == 'json') ? '&moodlewsrestformat=' . $restformat : '';
-  //      $resp = $curl->post($serverurl . $restformat, $params);
+        //      $resp = $curl->post($serverurl . $restformat, $params);
         ?>
         <?= $serverurl . $restformat ?>
         <p>
