@@ -18,7 +18,7 @@ and open the template in the editor.
                     wstoken: token,
                     wsfunction: functionname,
                     moodlewsrestformat: 'json',
-                    id: 73 //Retrieve results based on course Id 2
+                    //id: 73 //Retrieve results based on course Id 2
                 }
                 var response = $.ajax(
                         {type: 'GET',
@@ -27,15 +27,20 @@ and open the template in the editor.
                             url: serverurl,
                             success: function (data, textStatus) {
                                 var jsn = data;
-                                if (jsn.errorcode == undefined) {
-                                    $('#data_out').html(jsn);
-                                } else
-                                    ($('#data_out').html('<b>' + jsn.errorcode + '</b>'); )
+                                if (typeof jsn.errorcode !== undefined) {
+                                    //$('#data_out').html(JSON.stringify(jsn[1]));
+                                    
+            $('#data_out').html(jsn.length);
+                                } else {
+                                    $('#data_out').html('<b>' + jsn.exception + '<br />'
+                                            + jsn.errorcode + '<br />'
+                                            + jsn.message + '<br /></b>');
+                                }
                                 console.log(jsn);
+                                console.log(typeof jsn.errorcode);
                             }
                         }
                 );
-
             });
         </script>
         <title></title>
@@ -69,7 +74,7 @@ and open the template in the editor.
         $restformat = ($restformat == 'json') ? '&moodlewsrestformat=' . $restformat : '';
         //      $resp = $curl->post($serverurl . $restformat, $params);
         ?>
-<?= $serverurl . $restformat ?>
+        <?= $serverurl . $restformat ?>
         <p>
         <p>
     </body>
