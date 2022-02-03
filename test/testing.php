@@ -23,14 +23,22 @@ and open the template in the editor.
                 var response = $.ajax(
                         {type: 'GET',
                             data: data,
-                            url: serverurl
+                            dataType: "json", // тип загружаемых данных
+                            url: serverurl,
+                            success: function (data, textStatus) {
+                                $('#data_out').val(data);
+                            }
                         }
                 );
+
             });
         </script>
         <title></title>
     </head>
     <body>
+        <div id="data_out">
+
+        </div>
         <?php
         ini_set('error_reporting', E_ALL);
         ini_set('display_errors', 1);
