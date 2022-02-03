@@ -7,6 +7,12 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <style type="text/css">
+            body{
+                font-family:'Verdana', monospace;
+                font-size: 10pt;
+            }
+        </style>
         <script type="text/javascript" src="./jquery-3.6.0.min.js" ></script>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -29,8 +35,10 @@ and open the template in the editor.
                                 var jsn = data;
                                 if (typeof jsn.errorcode !== undefined) {
                                     //$('#data_out').html(JSON.stringify(jsn[1]));
-                                    
-            $('#data_out').html(jsn.length);
+                                    var N = jsn.length;
+                                    for (i = 0; N > i; i++) {
+                                        $('#data_out').append(jsn[i].id + ' ' + jsn[i].shortname + ' ' + jsn[i].fullname + '<hr />');
+                                    }
                                 } else {
                                     $('#data_out').html('<b>' + jsn.exception + '<br />'
                                             + jsn.errorcode + '<br />'
