@@ -1,9 +1,12 @@
 <?php
+
 use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 
 $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
 ?>
+
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
@@ -27,7 +30,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     fugiat nulla pariatur.</p>
 
                 <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/courses-info']) ?>">
-                    <?= Url::to(['moodle/courses-info']) ?>
+<?= Url::to(['moodle/courses-info']) ?>
                     </a></p>
             </div>
             <div class="col-lg-4">
@@ -38,7 +41,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="#">Lorem ipsum dolor</a></p>
+                <p><a id="jQuery-test" class="btn btn-outline-secondary" href="#">jQuery test</a></p>
             </div>
             <div class="col-lg-4">
                 <h2>Heading</h2>
