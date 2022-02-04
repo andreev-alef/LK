@@ -30,7 +30,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
                     fugiat nulla pariatur.</p>
 
                 <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/courses-info']) ?>">
-<?= Url::to(['moodle/courses-info']) ?>
+                        <?= Url::to(['moodle/courses-info']) ?>
                     </a></p>
             </div>
             <div class="col-lg-4">

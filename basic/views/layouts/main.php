@@ -21,44 +21,7 @@ AppAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var domainname = 'https://study.edu.tele-med.ai';
-                var token = 'e34754ef2e1ce0df4c8ca95f96f040cf';
-                var functionname = 'core_course_get_courses';
-                var serverurl = domainname + '/webservice/rest/server.php';
-                var data = {
-                    wstoken: token,
-                    wsfunction: functionname,
-                    moodlewsrestformat: 'json',
-                    //id: 73 //Retrieve results based on course Id 2
-                }
-                var response = $.ajax(
-                        {type: 'GET',
-                            data: data,
-                            dataType: "json", // тип загружаемых данных
-                            url: serverurl,
-                            success: function (data, textStatus) {
-                                var jsn = data;
-                                if (typeof jsn.errorcode !== undefined) {
-                                    //$('#data_out').html(JSON.stringify(jsn[1]));
-                                    var N = jsn.length;
-                                    for (i = 0; N > i; i++) {
-                                        $('#data_out').append(jsn[i].id + ' ' + jsn[i].shortname + ' ' + jsn[i].fullname + '<hr />');
-                                    }
-                                } else {
-                                    $('#data_out').html('<b>' + jsn.exception + '<br />'
-                                            + jsn.errorcode + '<br />'
-                                            + jsn.message + '<br /></b>');
-                                }
-                                console.log(jsn);
-                                console.log(typeof jsn.errorcode);
-                            }
-                        }
-                );
-            }
-            );
-        </script>
+
     </head>
     <body class="d-flex flex-column h-100">
         <?php $this->beginBody() ?>

@@ -6,6 +6,44 @@ use yii\helpers\Url;
 
 $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
 ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var domainname = 'https://study.edu.tele-med.ai';
+        var token = 'e34754ef2e1ce0df4c8ca95f96f040cf';
+        var functionname = 'core_course_get_courses';
+        var serverurl = domainname + '/webservice/rest/server.php';
+        var data = {
+            wstoken: token,
+            wsfunction: functionname,
+            moodlewsrestformat: 'json',
+            //id: 73 //Retrieve results based on course Id 2
+        }
+        var response = $.ajax(
+                {type: 'GET',
+                    data: data,
+                    dataType: "json", // тип загружаемых данных
+                    url: serverurl,
+                    success: function (data, textStatus) {
+                        var jsn = data;
+                        if (typeof jsn.errorcode !== undefined) {
+                            //$('#data_out').html(JSON.stringify(jsn[1]));
+                            var N = jsn.length;
+                            for (i = 0; N > i; i++) {
+                                $('#data_out').append(jsn[i].id + ' ' + jsn[i].shortname + ' ' + jsn[i].fullname + '<hr />');
+                            }
+                        } else {
+                            $('#data_out').html('<b>' + jsn.exception + '<br />'
+                                    + jsn.errorcode + '<br />'
+                                    + jsn.message + '<br /></b>');
+                        }
+                        console.log(jsn);
+                        console.log(typeof jsn.errorcode);
+                    }
+                }
+        );
+    }
+    );
+</script>
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
@@ -23,9 +61,7 @@ $this->title = 'НПКЦ ДиТТ ДЗМ :: Сервисы Moodle';
             <div class="col-lg-8">
                 <h2>Информация о курсах</h2>
 
-                <p>
-                    <?= $resp[1] ?>
-                </p>
+                <p id="data_out"></p>
 
                 <p><a class="btn btn-outline-secondary" href="<?= Url::to(['moodle/index']) ?>">
                         <?= Url::to(['moodle/index']) ?>
